@@ -4,15 +4,18 @@ import Home from "./components/Home";
 import Category from "./components/Category";
 import Checkout from "./components/Checkout";
 import CartContextProvider from "./context/CartContext";
+import Layout from "./components/Layout";
 
 const App = () => {
   return (
     <CartContextProvider>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/category/:categoryId" element={<Category />} />
-        <Route path="/checkout" element={<Checkout />} />
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/category/:categoryId" element={<Category />} />
+          <Route path="/checkout" element={<Checkout />} />
+        </Routes>
+      </Layout>
     </CartContextProvider>
   );
 };
